@@ -28,6 +28,8 @@ public class Discount {
 											+ (String.format("%.2f", ((a - (a * 0.05)) / 26.5))) + " USD"
 									: "Your discount - 7% Total sum with discount: " + (a - (a * 0.07)) + " UAH or "
 											+ (String.format("%.2f", ((a - (a * 0.07)) / 26.5))) + " USD")));
+			
+			
 		}
 	}
 }
