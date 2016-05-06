@@ -5,8 +5,10 @@ public class Pudge {
 	private int strenght;
 	private int agility;
 	private int helth = 100;
+	private int damage;
 	private boolean slot1 = false;
 	private boolean slot2 = false;
+	private boolean crit = false;
 	private String objName;
 	BootsOfPower bop = new BootsOfPower();
 	BootsOfSpeed bos = new BootsOfSpeed();
@@ -40,21 +42,71 @@ public class Pudge {
 		agility = agility + a;
 	}
 
-	int setStrike() {
-		int strike = intelligence / 3 + agility / 2 + strenght;
-		return strike;
+	void setStrike() {
+
+		int randomCrit = 1 + (int) (Math.random() * ((3 - 1) + 1));
+		damage = intelligence / 3 + agility / 2 + strenght;
+	switch (randomCrit) {
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			damage=damage*2;
+			crit=true;
+			break;
+		default:
+			break;
+		}
+	}
+	
+	void setStrikeInfo() {
+		if (crit){
+			System.out.print(Pudge.class.getSimpleName()+" "+getObjName() + " Deals: " + damage + "(!) ");	
+			crit=false;
+		}else{
+			System.out.print(Pudge.class.getSimpleName()+" "+getObjName() + " Deals: " + damage + "    ");
+		}
 	}
 
-	void getHelth(int strike) {
+	void setHelth(int strike) {
 		helth = helth - strike;
+	}
+	
+	int getDamage() {
+		return damage;
 	}
 
 	void getInfo() {
-		System.out.print(Pudge.class.getSimpleName()+" "+getObjName() + " Helth: " + helth + "   ");
+		String stringHelth=helth+"";
+		if(stringHelth.length()>=3){
+			System.out.print(Pudge.class.getSimpleName()+" "+getObjName() + " Helth: " + helth + "   ");			
+		}else if(stringHelth.length()>=2){
+			System.out.print(Pudge.class.getSimpleName()+" "+getObjName() + " Helth: " + helth + "    ");	
+		}else{
+			System.out.print(Pudge.class.getSimpleName()+" "+getObjName() + " Helth: " + helth + "     ");	
+		}
 
 	}
 
 	int setHelth() {
 		return helth;
 	}
+
+	void getInfoIntelligence() {
+		System.out.print("       "+"Intelligence: "+intelligence+"    ");
+
+
+	}
+	void getInfoStrenght() {
+
+		System.out.print("       "+"Strenght: "+strenght+"       ");
+
+
+	}
+	void getInfoAgility() {
+		System.out.print("       "+"Agility: "+agility+"        ");
+
+	}
+
 }
