@@ -47,6 +47,7 @@ public class Fight {
 			}
 			System.out.println();
 			System.out.println();
+			System.out.println();
 		}
 		System.out.println();
 		System.out.println();
