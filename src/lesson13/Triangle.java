@@ -8,9 +8,9 @@ public class Triangle extends Figure {
 
 	Triangle(String colour, double sideA, double sideB, double sideC) {
 		super(colour);
-		this.sideA=sideA;
-		this.sideB=sideB;
-		this.sideC=sideB;
+		this.sideA = sideA;
+		this.sideB = sideB;
+		this.sideC = sideB;
 	}
 
 	void getInfo() {

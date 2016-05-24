@@ -5,9 +5,9 @@ public class Circle extends Figure {
 
 	Circle(String colour, double radius) {
 		super(colour);
-		this.radius=radius;
+		this.radius = radius;
 	}
-	
+
 	void getInfo() {
 		super.getInfo();
 		System.out.print("; Radius: " + radius);

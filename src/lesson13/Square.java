@@ -6,9 +6,9 @@ public class Square extends Figure {
 
 	Square(String colour, double side) {
 		super(colour);
-		this.side=side;
+		this.side = side;
 	}
-	
+
 	void getInfo() {
 		super.getInfo();
 		System.out.print("; Side: " + side);
